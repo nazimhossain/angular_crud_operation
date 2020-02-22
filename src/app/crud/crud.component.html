@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="add_employee">
+        
+      <span class="add">ADD EMPLOYEE: </span>  <button class="btn" (click) ="addNewEmployeeBtn()">+</button>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-item">
+                <div *ngIf = "newEmployeeClicked">
+                    <form >
+                        <div class="form-group">
+                            <label for="name">  name :</label>
+                            <input class="input" type="text"
+                            name ="name" [(ngModel)] ="model.name"
+                            placeholder="input your name" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position</label>
+                            <input type="text" class="input"
+                            name="position" [(ngModel)] ="model.position"
+                            placeholder="input your position">
+                        </div>
+                    </form>
+                    <br>
+                    <div class="add_container">
+                        <button class="button is-primary" (click) = "addEmployee()">Save</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+   
+    <div class="columns">
+        <div class="column">
+          <h1>NAme</h1>
+          <div class="containerListItems" *ngFor="let employee of employees;
+             let i = index" [style.background-color]="changeColorOne()">
+             <h1>{{i}}.{{employee.name}}</h1>
+            </div>
+        </div>
+        <div class="column">
+         <h1>Position</h1>
+         <div class="containerListItems" *ngFor="let employee of employees;
+         let i = index" [style.background-color]="changeColorOne()">
+         <h1>{{employee.position}}</h1>
+        </div>
+        </div>
+        <div class="column">
+         <h1> Edit Employee</h1>
+         <div class="containerListItems" *ngFor="let employee of employees;
+         let i = index" [style.background-color]="changeColorOne()">
+         <button class="button is-primary " (click) ="editEmployee(i)">edit</button>
+        </div>
+        </div>
+        <div class="column">
+          <h1>deleteEmployee</h1>
+          <div class="containerListItems" *ngFor="let employee of employees;
+          let i = index" [style.background-color]="changeColorOne()">
+          <button class="button is-primary " (click) ="deleteEmployee(i)">delete</button>
+         </div>
+        </div>
+      </div>
+    <div class="editemplyee">
+        <h1>Edit Employee</h1>
+        <form action="">
+            <div class="form-group">
+                <input type="text"
+                name="name" 
+                class="form-control input" [(ngModel)]= "model2.name"
+                placeholder="Edit your Name">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="text"
+                name="position" class="form-control input" 
+                [(ngModel)]="model2.position" placeholder="Edit your position">
+            </div>
+            <br>
+            <button class = "button is-success" type="submit" value="Update" (click)="updateEmployee()">Update</button>
+        </form>
+    </div>
+</div>

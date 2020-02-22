@@ -1,0 +1,29 @@
+h1{
+    padding: 17px;
+    margin-top:6px;
+    font-size: 15px;
+    font-weight: bold;
+}
+button.is-primary{
+    padding: 30px;
+    margin-bottom: 3px;
+}
+span.add{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.btn{
+    background-color: #00C4A7;
+    font-size: 20px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.add_employee{
+    margin-top: 20px;
+}
+.input{
+    padding: 19px;
+}
+.add_container .button .is-primary{
+    margin-top: 10px;
+}
